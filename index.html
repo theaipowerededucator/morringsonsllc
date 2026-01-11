@@ -5,248 +5,346 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morring And Son’s Landscaping LLC | Raleigh, NC</title>
     <meta name="description" content="Family-owned lawn care and landscaping in Raleigh. Mowing, cleanups, and maintenance. Call or text for a free quote.">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            turf: '#1E5828',     /* Primary: Turf Green - Navbar, Footer, Headers */
+                            gold: '#F8A426',     /* Secondary: Sunset Gold - Icons, Highlights */
+                            charcoal: '#222222', /* Neutral: Engine Charcoal - Body Text */
+                            silver: '#F2F2F2',   /* Background: Machinery Silver - Sections */
+                            red: '#CE2029',      /* Action: Power Red - CTAs */
+                            darkRed: '#a31920',  /* Hover state for Red */
+                            darkTurf: '#153e1c', /* Hover/Darker state for Turf */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            color: #1C1C1C;
-            background-color: #F7F7F4;
+            color: #222222; /* Engine Charcoal */
+            background-color: #FFFFFF;
         }
-        .brand-green { color: #1F6F3A; }
-        .bg-brand-green { background-color: #1F6F3A; }
-        .bg-brand-green-hover:hover { background-color: #16522b; }
-        .brand-olive { color: #6B8F3A; }
-        .bg-brand-olive { background-color: #6B8F3A; }
         
         /* Smooth scrolling */
         html { scroll-behavior: smooth; }
         
         /* Hero pattern overlay */
         .hero-overlay {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
+            background: linear-gradient(rgba(30, 88, 40, 0.4), rgba(0, 0, 0, 0.6));
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased text-brand-charcoal">
 
-    <!-- Sticky Header -->
-    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo / Brand Name -->
+    <!-- Sticky Header (Turf Green) -->
+    <header class="fixed w-full top-0 z-50 bg-brand-turf shadow-md border-b border-brand-darkTurf">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo / Brand Name (Updated: Removed Logo Image) -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="text-xl sm:text-2xl font-bold tracking-tight text-[#1F6F3A]">
-                        Morring And Son’s
-                        <span class="block text-xs text-gray-500 font-normal uppercase tracking-wider">Landscaping LLC</span>
+                    <a href="#" class="flex flex-col group">
+                        <!-- Brand Name Text Only -->
+                        <h1 class="text-2xl font-extrabold tracking-tight text-white leading-none">
+                            Morring And Son’s
+                        </h1>
+                        <span class="text-xs text-brand-gold font-medium uppercase tracking-widest mt-1">Landscaping LLC</span>
                     </a>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex space-x-8 items-center">
-                    <a href="#services" class="text-gray-600 hover:text-[#1F6F3A] font-medium transition">Services</a>
-                    <a href="#contact" class="text-gray-600 hover:text-[#1F6F3A] font-medium transition">Contact</a>
-                    <a href="tel:9199023072" class="bg-[#1F6F3A] hover:bg-[#16522b] text-white px-5 py-2.5 rounded-lg font-semibold transition shadow-sm flex items-center gap-2">
-                        <i data-lucide="phone" class="w-4 h-4"></i>
+                    <a href="#services" class="text-gray-100 hover:text-brand-gold font-medium transition">Services</a>
+                    <a href="#reviews" class="text-gray-100 hover:text-brand-gold font-medium transition">Reviews</a>
+                    <a href="#contact" class="text-gray-100 hover:text-brand-gold font-medium transition">Contact</a>
+                    
+                    <!-- Call To Action Button (Power Red) -->
+                    <a href="tel:9199023072" class="bg-brand-red hover:bg-brand-darkRed text-white px-6 py-3 rounded-lg font-bold transition shadow-md flex items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4 text-white"></i>
                         (919) 902-3072
                     </a>
                 </nav>
 
-                <!-- Mobile Call Button (Icon only) -->
-                <div class="md:hidden flex items-center">
-                    <a href="tel:9199023072" class="bg-[#1F6F3A] text-white p-2 rounded-full mr-4">
+                <!-- Mobile Call Button & Menu -->
+                <div class="md:hidden flex items-center gap-4">
+                    <a href="tel:9199023072" class="bg-brand-red text-white p-3 rounded-full shadow-md">
                         <i data-lucide="phone" class="w-5 h-5"></i>
                     </a>
-                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-[#1F6F3A]">
+                    <button id="mobile-menu-btn" class="text-white hover:text-brand-gold p-1">
                         <i data-lucide="menu" class="w-8 h-8"></i>
                     </button>
                 </div>
             </div>
         </div>
         
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="#services" class="block py-3 text-base font-medium text-gray-700 border-b border-gray-50">Services</a>
-                <a href="#contact" class="block py-3 text-base font-bold text-[#1F6F3A]">Contact Us</a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-turf border-t border-brand-darkTurf absolute w-full shadow-lg">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="#services" class="block px-4 py-3 text-base font-medium text-white hover:bg-brand-darkTurf rounded-lg">Services</a>
+                <a href="#reviews" class="block px-4 py-3 text-base font-medium text-white hover:bg-brand-darkTurf rounded-lg">Reviews</a>
+                <a href="#contact" class="block px-4 py-3 text-base font-bold text-white bg-brand-red rounded-lg mt-4 text-center">Contact Us</a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-20 pb-32 flex items-center min-h-[85vh] lg:min-h-[700px]">
+    <section class="relative pt-24 pb-32 flex items-center min-h-[80vh] lg:min-h-[700px]">
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&q=80&w=2000" alt="Beautifully manicured lawn" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&q=80&w=2000" alt="Beautifully manicured lawn in Raleigh" class="w-full h-full object-cover">
             <div class="hero-overlay absolute inset-0"></div>
         </div>
 
-        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white mt-10">
-            <span class="inline-block py-1 px-3 rounded-full bg-[#6B8F3A] text-white text-xs font-bold tracking-wider uppercase mb-6 shadow-md">
-                Serving Raleigh & Wake County
-            </span>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Lawn Care & Landscaping<br/>in Raleigh
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white mt-10">
+            <div class="inline-flex items-center gap-2 py-1 px-4 rounded-full bg-brand-turf/90 backdrop-blur-sm text-white text-xs font-bold tracking-widest uppercase mb-6 shadow-lg border border-brand-gold/30">
+                <i data-lucide="map-pin" class="w-3 h-3 text-brand-gold"></i> Serving Raleigh & Wake County
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-lg">
+                Expert Lawn Care<br/>& Landscaping
             </h1>
-            <p class="text-lg md:text-xl text-gray-100 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-                Family-owned service for regular maintenance, cleanups, and landscaping projects. Dependable maintenance, clean finishes, and friendly service.
+            
+            <p class="text-lg md:text-xl text-gray-100 mb-10 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
+                Family-owned service delivering dependable maintenance and clean finishes. We treat your lawn like it's our own.
             </p>
+            
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="tel:9199023072" class="bg-[#1F6F3A] hover:bg-[#16522b] text-white text-lg px-8 py-4 rounded-lg font-bold transition shadow-lg flex items-center justify-center gap-2 transform hover:-translate-y-1">
-                    <i data-lucide="phone-call" class="w-5 h-5"></i>
+                <!-- Power Red CTA -->
+                <a href="tel:9199023072" class="bg-brand-red hover:bg-brand-darkRed text-white text-lg px-8 py-4 rounded-xl font-bold transition shadow-xl flex items-center justify-center gap-3 transform hover:-translate-y-1 ring-4 ring-brand-red/30 border border-white/10">
+                    <i data-lucide="phone-call" class="w-5 h-5 text-white"></i>
                     Call/Text (919) 902-3072
                 </a>
-                <a href="#contact" class="bg-white hover:bg-gray-100 text-[#1C1C1C] text-lg px-8 py-4 rounded-lg font-bold transition shadow-lg flex items-center justify-center gap-2">
+                <a href="#contact" class="bg-white hover:bg-gray-100 text-brand-charcoal text-lg px-8 py-4 rounded-xl font-bold transition shadow-xl flex items-center justify-center gap-2 transform hover:-translate-y-1">
                     Request a Quote
                 </a>
             </div>
-            <p class="mt-6 text-sm text-gray-300 opacity-90">
-                <i data-lucide="check-circle" class="w-4 h-4 inline-block mr-1 text-[#6B8F3A]"></i> Free Estimates
-                <span class="mx-3 text-gray-500">|</span>
-                <i data-lucide="check-circle" class="w-4 h-4 inline-block mr-1 text-[#6B8F3A]"></i> Family Owned
-            </p>
+            
+            <div class="mt-8 flex justify-center items-center gap-6 text-sm text-gray-200 font-medium">
+                <span class="flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-gold"></i> Free Estimates</span>
+            </div>
         </div>
     </section>
 
-    <!-- Intro / Value Prop -->
-    <section class="py-16 bg-white border-b border-[#E5E5E0]">
+    <!-- Value Prop / Intro -->
+    <section class="py-20 bg-white border-b border-gray-100">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-2xl md:text-3xl font-bold text-[#1C1C1C] mb-4">Your Neighbors' Favorite Lawn Service</h2>
-            <p class="text-gray-600 text-lg leading-relaxed">
-                <span class="font-semibold text-[#1F6F3A]">Morring And Son’s Landscaping LLC</span> is a family-owned business serving Raleigh. We love what we do and aim to go above and beyond on every job. Whether you need a weekly mow or a complete seasonal cleanup, we show up on time and leave your yard looking pristine.
+            <h2 class="text-2xl md:text-3xl font-bold text-brand-turf mb-6">Your Neighbors' Favorite Lawn Service</h2>
+            <p class="text-brand-charcoal text-lg leading-relaxed">
+                <span class="font-bold text-brand-turf">Morring And Son’s Landscaping LLC</span> is a family-owned business dedicated to reliability. Whether you need a weekly mow, a seasonal cleanup, or a complete bed refresh, we show up on time and leave your yard looking pristine.
             </p>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-[#F7F7F4]">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Services Section (Machinery Silver Background) -->
+    <section id="services" class="py-24 bg-brand-silver">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-[#1C1C1C] sm:text-4xl">What We Do</h2>
-                <p class="mt-4 text-xl text-gray-500">Complete care for your property.</p>
+                <span class="text-brand-turf font-bold tracking-wider uppercase text-sm">Our Services</span>
+                <h2 class="text-3xl font-bold text-brand-charcoal sm:text-4xl mt-2">Complete Property Care</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-[#E8F5E9] rounded-full flex items-center justify-center mb-6 text-[#1F6F3A]">
-                        <i data-lucide="scissors" class="w-6 h-6"></i>
+                <!-- Service Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 hover:shadow-lg hover:border-brand-turf/30 transition group">
+                    <div class="w-14 h-14 bg-brand-silver rounded-xl flex items-center justify-center mb-6 text-brand-turf group-hover:bg-brand-turf group-hover:text-brand-gold transition">
+                        <i data-lucide="scissors" class="w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-[#1C1C1C] mb-3">Lawn Mowing</h3>
-                    <p class="text-gray-600">Regular weekly or bi-weekly maintenance. Includes professional edging and blowing off hard surfaces.</p>
+                    <h3 class="text-xl font-bold text-brand-charcoal mb-3">Lawn Mowing</h3>
+                    <p class="text-brand-charcoal/80">Weekly or bi-weekly maintenance. Includes professional edging and blowing off all hard surfaces.</p>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-[#E8F5E9] rounded-full flex items-center justify-center mb-6 text-[#1F6F3A]">
-                        <i data-lucide="shovel" class="w-6 h-6"></i>
+                <!-- Service Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 hover:shadow-lg hover:border-brand-turf/30 transition group">
+                    <div class="w-14 h-14 bg-brand-silver rounded-xl flex items-center justify-center mb-6 text-brand-turf group-hover:bg-brand-turf group-hover:text-brand-gold transition">
+                        <i data-lucide="shovel" class="w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-[#1C1C1C] mb-3">Mulch & Bed Refresh</h3>
-                    <p class="text-gray-600">Fresh mulch installation and weed pulling to make your flower beds pop.</p>
+                    <h3 class="text-xl font-bold text-brand-charcoal mb-3">Mulch & Bed Refresh</h3>
+                    <p class="text-brand-charcoal/80">Fresh mulch installation, weeding, and bed definition to make your landscape pop.</p>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-[#E8F5E9] rounded-full flex items-center justify-center mb-6 text-[#1F6F3A]">
-                        <i data-lucide="leaf" class="w-6 h-6"></i>
+                <!-- Service Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 hover:shadow-lg hover:border-brand-turf/30 transition group">
+                    <div class="w-14 h-14 bg-brand-silver rounded-xl flex items-center justify-center mb-6 text-brand-turf group-hover:bg-brand-turf group-hover:text-brand-gold transition">
+                        <i data-lucide="leaf" class="w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-[#1C1C1C] mb-3">Seasonal Cleanups</h3>
-                    <p class="text-gray-600">Spring and fall leaf removal, debris clearing, and gutter cleaning options.</p>
+                    <h3 class="text-xl font-bold text-brand-charcoal mb-3">Seasonal Cleanups</h3>
+                    <p class="text-brand-charcoal/80">Leaf removal and debris clearing in Spring and Fall. We handle the heavy lifting.</p>
                 </div>
 
-                <!-- Service 4 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-[#E8F5E9] rounded-full flex items-center justify-center mb-6 text-[#1F6F3A]">
-                        <i data-lucide="tree-pine" class="w-6 h-6"></i>
+                <!-- Service Card 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 hover:shadow-lg hover:border-brand-turf/30 transition group">
+                    <div class="w-14 h-14 bg-brand-silver rounded-xl flex items-center justify-center mb-6 text-brand-turf group-hover:bg-brand-turf group-hover:text-brand-gold transition">
+                        <i data-lucide="tree-pine" class="w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-[#1C1C1C] mb-3">Shrub Trimming</h3>
-                    <p class="text-gray-600">Keep your bushes and hedges neatly shaped and healthy all year round.</p>
+                    <h3 class="text-xl font-bold text-brand-charcoal mb-3">Shrub Trimming</h3>
+                    <p class="text-brand-charcoal/80">Keep your bushes and hedges neatly shaped and healthy all year round.</p>
                 </div>
 
-                <!-- Service 5 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-[#E8F5E9] rounded-full flex items-center justify-center mb-6 text-[#1F6F3A]">
-                        <i data-lucide="ruler" class="w-6 h-6"></i>
+                <!-- Service Card 5 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 hover:shadow-lg hover:border-brand-turf/30 transition group">
+                    <div class="w-14 h-14 bg-brand-silver rounded-xl flex items-center justify-center mb-6 text-brand-turf group-hover:bg-brand-turf group-hover:text-brand-gold transition">
+                        <i data-lucide="ruler" class="w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-[#1C1C1C] mb-3">Trimming & Edging</h3>
-                    <p class="text-gray-600">Crisp, clean lines along your driveways and walkways for that professional finish.</p>
+                    <h3 class="text-xl font-bold text-brand-charcoal mb-3">Trimming & Edging</h3>
+                    <p class="text-brand-charcoal/80">Crisp, clean lines along driveways and walkways for that professional finish.</p>
                 </div>
 
-                <!-- Service 6 -->
-                <div class="bg-[#1F6F3A] p-8 rounded-xl shadow-sm border border-[#1F6F3A] hover:shadow-md transition text-white flex flex-col justify-center items-center text-center">
-                    <i data-lucide="phone-forwarded" class="w-10 h-10 mb-4 opacity-90"></i>
-                    <h3 class="text-xl font-bold mb-2">Have a custom project?</h3>
-                    <p class="text-green-100 mb-6">We do more! Call or text us to discuss your specific needs.</p>
-                    <a href="tel:9199023072" class="inline-block bg-white text-[#1F6F3A] px-6 py-2 rounded-lg font-bold text-sm">Call Now</a>
+                <!-- Custom Card -->
+                <div class="bg-brand-turf p-8 rounded-2xl shadow-lg border border-brand-turf text-white flex flex-col justify-center items-center text-center relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-brand-darkTurf opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="relative z-10">
+                        <i data-lucide="phone-forwarded" class="w-12 h-12 mb-4 text-brand-gold mx-auto"></i>
+                        <h3 class="text-xl font-bold mb-2">Have a custom project?</h3>
+                        <p class="text-green-100 mb-6">We do more! Call or text us to discuss your specific needs.</p>
+                        <!-- Power Red CTA in card -->
+                        <a href="tel:9199023072" class="inline-block bg-brand-red text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-brand-darkRed transition">Call Now</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Location & Contact -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-[#1F6F3A] rounded-2xl overflow-hidden shadow-xl flex flex-col">
+    <!-- Reviews / Social Proof (Updated Layout) -->
+    <section id="reviews" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-brand-charcoal mb-12">Trusted by Raleigh Homeowners</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-brand-silver p-8 rounded-xl border border-gray-200">
+                    <div class="flex text-brand-gold mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-brand-charcoal italic mb-4">"Had an excellent experience working with Maurice and Alex! My property was in desperate need of a facelift and I was pleasantly surprised when Maurice responded so quickly, showed up when he promised and was so helpful in guiding my decisions. The scheduling, quote process and professionalism makes Maurice a standout in the business. I highly recommend Morring & Sons and look forward to a long term relationship!"</p>
+                    <p class="text-sm font-bold text-brand-turf">- Raleigh Homeowner</p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-brand-silver p-8 rounded-xl border border-gray-200">
+                    <div class="flex text-brand-gold mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-brand-charcoal italic mb-4">"Maurice was wonderful to work with! I searched for a quote for a flower bed refresh and not only was he quick, but fairly priced! The team came out just a few days later, worked quickly and did a wonderful job. Would recommend for any future lawn work!"</p>
+                    <p class="text-sm font-bold text-brand-turf">- Local Customer</p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-brand-silver p-8 rounded-xl border border-gray-200">
+                    <div class="flex text-brand-gold mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-brand-charcoal italic mb-4">"If you looking for exceptional professional service I highly recommend Maurice. He really listened to what I wanted and turned my vision into everything I wanted and more. Timely and friendly staff and they got the job done quickly. Thanks for the great experience!!!"</p>
+                    <p class="text-sm font-bold text-brand-turf">- Satisfied Client</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact (Turf Green Background) -->
+    <section id="contact" class="py-20 bg-brand-turf">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-darkTurf/40 rounded-3xl p-8 md:p-12 lg:p-16 text-center border border-white/10 backdrop-blur-sm shadow-2xl">
                 
-                <!-- Contact Info Side -->
-                <div class="p-10 w-full text-white flex flex-col justify-center text-center items-center">
-                    <h2 class="text-3xl font-bold mb-6">Ready for a better lawn?</h2>
-                    <p class="text-green-100 mb-8 text-lg max-w-2xl">Call or text us today for a free quote. We can usually provide an estimate quickly!</p>
-                    
-                    <div class="space-y-6 w-full max-w-lg text-left">
-                        <div class="flex items-center justify-center md:justify-start">
-                            <div class="bg-white/20 p-3 rounded-lg mr-4">
-                                <i data-lucide="phone" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <p class="text-green-200 text-sm font-medium uppercase tracking-wider">Call or Text Anytime</p>
-                                <a href="tel:9199023072" class="text-2xl font-bold hover:text-green-200 transition">(919) 902-3072</a>
-                            </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready for a better lawn?</h2>
+                <p class="text-gray-200 mb-10 text-lg max-w-2xl mx-auto">Contact us today for a free quote. We usually respond within a few hours!</p>
+                
+                <div class="grid md:grid-cols-3 gap-8 text-left max-w-4xl mx-auto">
+                    <!-- Phone -->
+                    <div class="flex items-start">
+                        <div class="bg-white/10 p-3 rounded-lg mr-4 shrink-0">
+                            <i data-lucide="phone" class="w-6 h-6 text-brand-gold"></i>
                         </div>
-
-                        <div class="flex items-center justify-center md:justify-start">
-                            <div class="bg-white/20 p-3 rounded-lg mr-4">
-                                <i data-lucide="map-pin" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <p class="text-green-200 text-sm font-medium uppercase tracking-wider">Service Area</p>
-                                <p class="text-xl font-semibold">Raleigh, NC & Wake County</p>
-                            </div>
+                        <div>
+                            <p class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-1">Call or Text</p>
+                            <a href="tel:9199023072" class="text-2xl font-bold text-white hover:text-brand-gold transition">(919) 902-3072</a>
                         </div>
+                    </div>
 
-                        <div class="flex items-center justify-center md:justify-start">
-                            <div class="bg-white/20 p-3 rounded-lg mr-4">
-                                <i data-lucide="clock" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <p class="text-green-200 text-sm font-medium uppercase tracking-wider">Hours</p>
-                                <p class="text-lg">Monday - Saturday: 8am - 6pm</p>
+                    <!-- Area -->
+                    <div class="flex items-start">
+                        <div class="bg-white/10 p-3 rounded-lg mr-4 shrink-0">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-brand-gold"></i>
+                        </div>
+                        <div>
+                            <p class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-1">Service Area</p>
+                            <p class="text-lg font-semibold text-white">Raleigh, NC</p>
+                            <p class="text-sm text-gray-300">& Wake County</p>
+                        </div>
+                    </div>
+
+                    <!-- Hours -->
+                    <div class="flex items-start">
+                        <div class="bg-white/10 p-3 rounded-lg mr-4 shrink-0">
+                            <i data-lucide="clock" class="w-6 h-6 text-brand-gold"></i>
+                        </div>
+                        <div>
+                            <p class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-1">Business Hours</p>
+                            <div class="text-white text-sm space-y-1">
+                                <p><span class="w-20 inline-block font-semibold">Mon - Sat:</span> 7:00 AM - 9:00 PM</p>
+                                <p><span class="w-20 inline-block font-semibold text-white/60">Sun:</span> Closed</p>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="mt-12 pt-10 border-t border-white/10">
+                    <!-- Power Red CTA -->
+                    <a href="tel:9199023072" class="inline-flex items-center justify-center bg-brand-red hover:bg-brand-darkRed text-white px-8 py-4 rounded-xl font-bold text-lg transition shadow-lg w-full sm:w-auto transform hover:-translate-y-1">
+                        Get Your Free Quote Now
+                    </a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#1C1C1C] text-white py-12 border-t border-gray-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+    <!-- Footer (Turf Green) -->
+    <footer class="bg-brand-turf text-white py-12 border-t border-brand-darkTurf">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-center md:text-left">
-                <h3 class="text-xl font-bold text-white mb-1">Morring And Son’s Landscaping LLC</h3>
-                <p class="text-gray-400 text-sm">Dependable lawn care in Raleigh, NC.</p>
+                <h3 class="text-xl font-bold text-white mb-2">Morring And Son’s Landscaping LLC</h3>
+                <p class="text-gray-300 text-sm">Dependable, family-owned lawn care in Raleigh, NC.</p>
             </div>
             
-            <div class="flex items-center gap-6">
-               <a href="#" class="text-gray-400 hover:text-white transition text-sm">Privacy Policy</a>
-               <span class="text-gray-600">|</span>
-               <span class="text-gray-400 text-sm">Payments Accepted: Cash, Check, Card</span>
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-300">
+               <span>Payments: Cash, Check, Card</span>
+               <span class="hidden sm:inline">|</span>
+               <a href="#" class="hover:text-brand-gold transition">Privacy Policy</a>
             </div>
 
             <div class="text-center md:text-right">
-                <p class="text-gray-500 text-xs">© <span id="year"></span> Morring And Son’s Landscaping LLC.</p>
+                <p class="text-gray-400 text-xs">© <span id="year"></span> Morring And Son’s Landscaping LLC.</p>
             </div>
         </div>
     </footer>
@@ -265,6 +363,13 @@
 
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
         });
     </script>
 </body>
